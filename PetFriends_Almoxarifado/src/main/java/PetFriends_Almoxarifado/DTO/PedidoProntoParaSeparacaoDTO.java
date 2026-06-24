@@ -1,5 +1,7 @@
 package PetFriends_Almoxarifado.DTO;
 
+import PetFriends_Almoxarifado.domain.Quantidade;
+
 import java.util.List;
 
 public record PedidoProntoParaSeparacaoDTO(
@@ -9,6 +11,6 @@ public record PedidoProntoParaSeparacaoDTO(
 ) {
     public record ItemSeparacaoDTO(
             String codigoDeBarras,
-            Integer quantidade
+            Quantidade quantidade
     ) {}
 }

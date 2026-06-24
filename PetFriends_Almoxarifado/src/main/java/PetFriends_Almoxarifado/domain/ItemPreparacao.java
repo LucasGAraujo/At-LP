@@ -15,12 +15,11 @@ public class ItemPreparacao {
 
     @Embedded
     private CodigoDeBarras codigoDeBarras;
-    private int quantidade;
 
-    public ItemPreparacao(CodigoDeBarras codigoDeBarras, int quantidade) {
-        if (quantidade <= 0) {
-            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
-        }
+    @Embedded
+    private Quantidade quantidade;
+
+    public ItemPreparacao(CodigoDeBarras codigoDeBarras, Quantidade quantidade) {
         this.codigoDeBarras = codigoDeBarras;
         this.quantidade = quantidade;
     }

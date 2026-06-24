@@ -31,7 +31,7 @@ public class PedidoOrquestradorService {
         var itensDTO = pedido.getItens().stream()
                 .map(item -> new PedidoProntoParaSeparacaoDTO.ItemSeparacaoDTO(
                         item.getCodigoDeBarras(),
-                        item.getQuantidade()))
+                            new PedidoProntoParaSeparacaoDTO.QuantidadeDTO(item.getQuantidade())))
                 .toList();
 
         var payload = new PedidoProntoParaSeparacaoDTO(

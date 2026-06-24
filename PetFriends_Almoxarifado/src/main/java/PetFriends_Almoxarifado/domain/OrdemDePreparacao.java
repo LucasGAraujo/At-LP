@@ -32,7 +32,7 @@ public class OrdemDePreparacao {
         this.status = StatusPreparacao.PENDENTE;
     }
 
-    public void adicionarItem(CodigoDeBarras codigoDeBarras, int quantidade) {
+    public void adicionarItem(CodigoDeBarras codigoDeBarras, Quantidade quantidade) {
         this.itens.add(new ItemPreparacao(codigoDeBarras, quantidade));
     }
     public void concluir() {

@@ -7,8 +7,15 @@ public record PedidoProntoParaSeparacaoDTO(
         String prioridadeFrete,
         List<ItemSeparacaoDTO> itens
 ) {
+
     public record ItemSeparacaoDTO(
             String codigoDeBarras,
-            Integer quantidade
+            QuantidadeDTO quantidade
     ) {}
+
+    public record QuantidadeDTO(
+            Integer valor
+    ) {
+    }
+
 }
