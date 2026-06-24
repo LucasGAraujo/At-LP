@@ -52,6 +52,6 @@ public class AlmoxarifadoController {
 
         publisher.publicarSeparacaoConcluida(payload);
 
-        return ResponseEntity.ok("📦 Sucesso! A Ordem de Preparação do Pedido " + pedidoId + " foi concluída e o transporte avisado.");
+        return ResponseEntity.ok(" Sucesso! A Ordem de Preparação do Pedido " + pedidoId + " foi concluída e o transporte avisado.");
     }
 }

@@ -11,6 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-        System.out.println("🛒 Microsserviço PEDIDOS rodando na porta 8080!");
+        System.out.println(" Microsserviço PEDIDOS rodando na porta 8080!");
     }
 }

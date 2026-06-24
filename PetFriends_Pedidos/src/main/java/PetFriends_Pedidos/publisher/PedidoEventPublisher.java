@@ -21,7 +21,7 @@ public class PedidoEventPublisher {
                 "pedido.evento.fechado",
                 payload
         );
-        System.out.println("🚀 Evento disparado: pedido.evento.fechado");
+        System.out.println(" Evento disparado: pedido.evento.fechado");
     }
 
     public void publicarPedidoDespachado(PedidoDespachadoDTO payload) {
@@ -30,6 +30,6 @@ public class PedidoEventPublisher {
                 "pedido.evento.despachado",
                 payload
         );
-        System.out.println("🚀 Evento disparado: pedido.evento.despachado");
+        System.out.println(" Evento disparado: pedido.evento.despachado");
     }
 }

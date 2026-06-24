@@ -25,18 +25,18 @@ public class PedidoController {
         pedido.adicionarItem(new ItemPedido("1234567890123", 2));
         repository.save(pedido);
 
-        return ResponseEntity.ok("✅ Pedido teste gerado com sucesso! ID: " + pedido.getId());
+        return ResponseEntity.ok(" Pedido teste gerado com sucesso! ID: " + pedido.getId());
     }
 
     @PostMapping("/{id}/pagar")
     public ResponseEntity<String> simularPagamento(@PathVariable Long id) {
         orquestradorService.processarPagamentoConfirmado(id);
-        return ResponseEntity.ok("💸 Pagamento confirmado! O Almoxarifado já foi notificado automaticamente para separar as mercadorias.");
+        return ResponseEntity.ok(" Pagamento confirmado! O Almoxarifado já foi notificado automaticamente para separar as mercadorias.");
     }
 
     @PostMapping("/{id}/despachar-manual-emergencia")
     public ResponseEntity<String> simularDespachoManual(@PathVariable Long id) {
         orquestradorService.despacharPedido(id);
-        return ResponseEntity.ok("⚠️ Forçando despacho manual! Evento enviado direto para o Transporte.");
+        return ResponseEntity.ok(" Forçando despacho manual! Evento enviado direto para o Transporte.");
     }
 }

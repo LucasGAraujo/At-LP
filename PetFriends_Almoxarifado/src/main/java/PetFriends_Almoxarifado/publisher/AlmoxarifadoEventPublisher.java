@@ -20,6 +20,6 @@ public class AlmoxarifadoEventPublisher {
                 "almoxarifado.evento.separado",
                 payload
         );
-        System.out.println("📦 Almoxarifado: Pedido " + payload.pedidoId() + " separado com sucesso!");
+        System.out.println(" Almoxarifado: Pedido " + payload.pedidoId() + " separado com sucesso!");
     }
 }

@@ -32,6 +32,6 @@ public class AlmoxarifadoService {
 
         repository.save(novaOrdem);
 
-        System.out.println("✅ Ordem de Preparação do pedido " + idDoPedido + " salva no banco com sucesso!");
+        System.out.println(" Ordem de Preparação do pedido " + idDoPedido + " salva no banco com sucesso!");
     }
 }

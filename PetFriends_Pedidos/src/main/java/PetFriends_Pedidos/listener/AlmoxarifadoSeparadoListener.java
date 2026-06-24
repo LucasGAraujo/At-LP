@@ -23,7 +23,7 @@ public class AlmoxarifadoSeparadoListener {
 
     @RabbitListener(queues = RabbitMQConfig.FILA_PEDIDOS_ALMOXARIFADO_SEPARADO)
     public void receberAvisoQueFoiSeparado(PedidoProntoParaSeparacaoDTO payload) {
-        System.out.println("✅ Vendas: Recebi o aviso do Almoxarifado. O pedido " + payload.pedidoId() + " está na doca!");
+        System.out.println(" Vendas: Recebi o aviso do Almoxarifado. O pedido " + payload.pedidoId() + " está na doca!");
 
         try {
             Pedido pedido = pedidoRepository.findById(Long.valueOf(payload.pedidoId()))
@@ -50,7 +50,7 @@ public class AlmoxarifadoSeparadoListener {
                     end
             );
             pedidoEventPublisher.publicarPedidoDespachado(despacho);
-            System.out.println("🚀 Vendas: Pedido do " + pedido.getNomeCliente() + " enviado para o Transporte com sucesso!");
+            System.out.println(" Vendas: Pedido do " + pedido.getNomeCliente() + " enviado para o Transporte com sucesso!");
 
         } catch (Exception e) {
             System.err.println("Erro ao processar despacho: " + e.getMessage());
