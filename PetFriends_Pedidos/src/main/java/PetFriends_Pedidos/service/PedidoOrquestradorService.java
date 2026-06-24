@@ -51,9 +51,9 @@ public class PedidoOrquestradorService {
         repository.save(pedido);
 
         var payload = new PedidoDespachadoDTO(
-                pedido.getId().toString(),
-                "2026-06-25T23:59:59",
-                1,
+                pedido.getId(),
+                2,
+                "3",
                 new PedidoDespachadoDTO.DestinatarioDTO("João", "21999999999"),
                 new PedidoDespachadoDTO.EnderecoDTO("Rua A", "Bairro B", "20000-000", "Rio", "RJ")
         );

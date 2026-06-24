@@ -1,12 +1,12 @@
 package PetFriends_Pedidos.DTO;
 
 public record PedidoDespachadoDTO(
-        String pedidoId,
-        String dataLimiteEntrega,
+        Long pedidoId,
         Integer volumes,
+        String dataLimiteEntrega,
         DestinatarioDTO destinatario,
         EnderecoDTO enderecoEntrega
-) {
+)  {
     public record DestinatarioDTO(
             String nome,
             String documentoRecebedor

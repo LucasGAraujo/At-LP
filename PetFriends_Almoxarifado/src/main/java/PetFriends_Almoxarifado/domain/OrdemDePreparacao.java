@@ -18,7 +18,7 @@ public class OrdemDePreparacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long pedidoId; // Referência ao ID do serviço de Pedidos
+    private Long pedidoId;
 
     @Enumerated(EnumType.STRING)
     private StatusPreparacao status;
@@ -34,5 +34,8 @@ public class OrdemDePreparacao {
 
     public void adicionarItem(CodigoDeBarras codigoDeBarras, int quantidade) {
         this.itens.add(new ItemPreparacao(codigoDeBarras, quantidade));
+    }
+    public void concluir() {
+        this.status = StatusPreparacao.PRONTO_PARA_ENVIO;
     }
 }

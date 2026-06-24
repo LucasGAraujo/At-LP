@@ -21,27 +21,22 @@ public class PedidoController {
 
     @PostMapping("/gerar-teste")
     public ResponseEntity<String> gerarPedidoDeTeste() {
-        // Cria um pedido fictício
         Pedido pedido = new Pedido("João da Silva", "12345678900", "Rua das Flores", "Centro", "20000-000", "Rio", "RJ");
         pedido.adicionarItem(new ItemPedido("1234567890123", 2));
-
-        // Salva no banco de dados
         repository.save(pedido);
 
         return ResponseEntity.ok("✅ Pedido teste gerado com sucesso! ID: " + pedido.getId());
     }
 
-    // 2. Rota que simula o Pagamento (Dispara evento para o Almoxarifado)
     @PostMapping("/{id}/pagar")
     public ResponseEntity<String> simularPagamento(@PathVariable Long id) {
         orquestradorService.processarPagamentoConfirmado(id);
-        return ResponseEntity.ok("💸 Pagamento confirmado! Evento enviado para a fila do Almoxarifado.");
+        return ResponseEntity.ok("💸 Pagamento confirmado! O Almoxarifado já foi notificado automaticamente para separar as mercadorias.");
     }
 
-    // 3. Rota que simula o Despacho (Dispara evento para o Transporte)
-    @PostMapping("/{id}/despachar")
-    public ResponseEntity<String> simularDespacho(@PathVariable Long id) {
+    @PostMapping("/{id}/despachar-manual-emergencia")
+    public ResponseEntity<String> simularDespachoManual(@PathVariable Long id) {
         orquestradorService.despacharPedido(id);
-        return ResponseEntity.ok("🚚 Pedido despachado! Evento enviado para a fila do Transporte.");
+        return ResponseEntity.ok("⚠️ Forçando despacho manual! Evento enviado direto para o Transporte.");
     }
 }
